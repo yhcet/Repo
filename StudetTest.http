@@ -1,0 +1,9 @@
+POST http://localhost:8080/students/join
+content-type: application/json
+
+{
+"name":"yhc",
+"age": 20
+}
+
+###

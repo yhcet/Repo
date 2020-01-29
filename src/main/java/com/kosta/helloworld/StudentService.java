@@ -18,6 +18,10 @@ public class StudentService {
     }
 
     public void joinStudent(Student student){
+        sr.save(student);
+    }
 
+    public Student findStudent(String name){
+        return  sr.findById(name).get();
     }
 }
