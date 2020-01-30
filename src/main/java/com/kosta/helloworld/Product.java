@@ -3,24 +3,15 @@ package com.kosta.helloworld;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity (name="student")
-public class Student
-{
-
-    @Id @Column @GeneratedValue(strategy = GenerationType.AUTO)
+@Entity
+public class Product {
+    @Id @GeneratedValue
     private long id;
-
-    @Column
     private String name;
-    @Column
-    private int age;
+    private int price;
 
-    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-    private List<Clazz> clazzes;
-
-    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+    @OneToMany (mappedBy = "product", fetch = FetchType.LAZY)
     private List<OrderInformation> orderInformations;
-
 
     public long getId() {
         return id;
@@ -30,34 +21,20 @@ public class Student
         this.id = id;
     }
 
-
-    public void cleaning()
-    {
-        System.out.println(name + ": Yes, I'm cleaning :(");
-    }
-
     public String getName() {
         return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public List<Clazz> getClazzes() {
-        return clazzes;
+    public int getPrice() {
+        return price;
     }
 
-    public void setClazzes(List<Clazz> clazzes) {
-        this.clazzes = clazzes;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public List<OrderInformation> getOrderInformations() {

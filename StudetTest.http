@@ -7,3 +7,19 @@ content-type: application/json
 }
 
 ###
+POST http://localhost:8080/clazzes
+content-type: application/json
+
+{
+  "name": "Java 희망편",
+  "description": "자바고수",
+  "student" : "http://localhost:8080/student-api/2"
+}
+
+###
+
+
+GET http://localhost:8080/students-api
+content-type: application/json
+
+###
